@@ -29,7 +29,7 @@
   "scripts": {
     "clean": "rm -rf dist",
     "build:js": "bun build ./src/core.ts ./src/express.ts ./src/fastify.ts ./src/nest.ts ./src/node.ts --outdir dist --target node --minify --splitting",
-    "build:types": "tsc --emitDeclarationOnly",
+    "build:types": "tsc -p tsconfig.declarations.json",
     "build": "bun run clean && bun run build:js && bun run build:types",
     "test": "jest --coverage",
     "lint": "eslint src --ext .ts",
