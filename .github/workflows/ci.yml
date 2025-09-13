@@ -56,7 +56,5 @@ jobs:
       - name: Upload coverage to Codecov
         uses: codecov/codecov-action@v4
         with:
-          token: ${{ secrets.CODECOV_TOKEN }}
-          slug: majidkn/jwt-flex
           files: ./coverage/lcov.info
           fail_ci_if_error: true
