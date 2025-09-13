@@ -1,5 +1,7 @@
 # JWT Flex
 
+[![Coverage Status](https://coveralls.io/repos/github/majidkn/jwt-flex/badge.svg)](https://coveralls.io/github/majidkn/jwt-flex)
+
 A flexible JWT authentication library for Node.js with support for Express, Fastify, NestJS, and pure Node.js applications.
 
 > **Note**: This package is in pre-1.0 development. The API may change before the 1.0.0 release.
