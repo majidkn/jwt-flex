@@ -7,7 +7,6 @@ describe('Token Functions', () => {
   const payload = { userId: 1, role: 'admin' };
 
   beforeEach(() => {
-    jest.resetAllMocks();
     // Mock jwt.sign to return a valid token by default
     jest.spyOn(jwt, 'sign').mockImplementation(() => 'valid.mock.token');
     // Mock jwt.verify to return the payload by default

@@ -11,6 +11,9 @@ const config: Config = {
       },
     ],
   },
+  automock: false,
+  clearMocks: true,
+  resetMocks: true,
 };
 
 export default config;
