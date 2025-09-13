@@ -55,6 +55,35 @@ describe('Token Extractors', () => {
       const extractor = fromQueryParameter('access_token');
       expect(extractor(req)).toBe('123');
     });
+
+    it('should extract token from plain object with query property', () => {
+      const req = {
+        query: {
+          token: 'mytoken123'
+        }
+      };
+
+      const extractor = fromQueryParameter();
+      expect(extractor(req)).toBe('mytoken123');
+    });
+
+    it('should return null for non-existent query parameter in plain object', () => {
+      const req = {
+        query: {
+          other: 'value'
+        }
+      };
+
+      const extractor = fromQueryParameter();
+      expect(extractor(req)).toBeNull();
+    });
+
+    it('should return null for plain object without query property', () => {
+      const req = {};
+
+      const extractor = fromQueryParameter();
+      expect(extractor(req)).toBeNull();
+    });
   });
 
   describe('fromCookie', () => {
@@ -98,6 +127,46 @@ describe('Token Extractors', () => {
 
       const extractor = fromCookie();
       expect(extractor(req)).toBe('xyz');
+    });
+
+    it('should extract token from plain object with cookies property', () => {
+      const req = {
+        cookies: {
+          token: 'mycookie123'
+        }
+      };
+
+      const extractor = fromCookie();
+      expect(extractor(req)).toBe('mycookie123');
+    });
+
+    it('should return null for non-existent cookie in plain object', () => {
+      const req = {
+        cookies: {
+          other: 'value'
+        }
+      };
+
+      const extractor = fromCookie();
+      expect(extractor(req)).toBeNull();
+    });
+
+    it('should return null for plain object without cookies property', () => {
+      const req = {};
+
+      const extractor = fromCookie();
+      expect(extractor(req)).toBeNull();
+    });
+
+    it('should handle custom cookie name in plain object', () => {
+      const req = {
+        cookies: {
+          'auth-token': 'customcookie123'
+        }
+      };
+
+      const extractor = fromCookie('auth-token');
+      expect(extractor(req)).toBe('customcookie123');
     });
   });
 
