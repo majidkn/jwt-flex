@@ -1,0 +1,6 @@
+dist
+coverage
+node_modules
+*.d.ts
+*.d.ts.map
+bun.lockb

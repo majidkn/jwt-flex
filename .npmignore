@@ -1,0 +1,37 @@
+# Source
+src/
+tests/
+
+# Config files
+tsconfig*.json
+jest.config.js
+.prettierrc
+.eslintrc
+.editorconfig
+
+# Git files
+.git/
+.gitignore
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Testing
+coverage/
+
+# Misc
+.DS_Store
+.env
+.env.*
+
+# Logs
+*.log
+
+# Bun
+bun.lockb
+
+# Don't ignore dist folder when publishing to npm
+!dist/
